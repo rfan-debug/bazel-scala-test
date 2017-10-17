@@ -1,0 +1,16 @@
+workspace_type: java
+java_language_level: 8
+
+directories:
+  .
+
+targets:
+  //src/...
+
+test_sources:
+  *test/java/*
+  *test/scala/*
+
+additional_languages:
+  scala
+
