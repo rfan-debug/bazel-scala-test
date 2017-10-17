@@ -1,10 +1,11 @@
 language: java
 env:
   global:
+    - BAZEL_INSTALL="${HOME}/bazel/install"
+  matrix:
     - BAZEL_VERSION=0.5.4
     - BAZEL_VERSION=0.6.0
     - BAZEL_VERSION=0.6.1
-    - BAZEL_INSTALL="${HOME}/bazel/install"
 install:
   - mkdir -p $BAZEL_INSTALL
   - pushd $BAZEL_INSTALL
