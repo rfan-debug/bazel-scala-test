@@ -1,0 +1,23 @@
+language: java
+env:
+  global:
+    - BAZEL_VERSION=0.5.4
+    - BAZEL_VERSION=0.6.0
+    - BAZEL_VERSION=0.6.1
+    - BAZEL_INSTALL="${HOME}/bazel/install"
+install:
+  - mkdir -p $BAZEL_INSTALL
+  - pushd $BAZEL_INSTALL
+  - wget --no-clobber "https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel_${BAZEL_VERSION}-linux-x86_64.deb"
+  - sudo dpkg -i "bazel_${BAZEL_VERSION}-linux-x86_64.deb"
+  - popd
+script:
+  - bazel test --test_output=errors --verbose_failures --test_summary="detailed" //...
+
+notifications:
+  email: false
+  slack: false
+
+branches:
+  only:
+    - master
