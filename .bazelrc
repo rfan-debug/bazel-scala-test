@@ -1,0 +1,3 @@
+
+# Test flag to view output of Go test
+test --test_arg=-test.v
