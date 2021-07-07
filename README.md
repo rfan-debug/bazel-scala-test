@@ -9,3 +9,8 @@ At this point in time the repo is working fine:
 * Running under Bazel `4.0.0`
 
 This repo is for validating the effect of gotest's flag on scala test.
+The following command will fail
+
+```bash
+bazel test //...
+```
