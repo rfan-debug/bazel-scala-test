@@ -1,4 +1,7 @@
 # WORKSPACE
+
+workspace(name = "hello")
+
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 skylib_version = "1.0.3"
@@ -35,3 +38,23 @@ scala_register_toolchains()
 load("@io_bazel_rules_scala//testing:scalatest.bzl", "scalatest_repositories", "scalatest_toolchain")
 scalatest_repositories()
 scalatest_toolchain()
+
+
+RULES_JVM_EXTERNAL_TAG = "4.0"
+RULES_JVM_EXTERNAL_SHA = "31701ad93dbfe544d597dbe62c9a1fdd76d81d8a9150c2bf1ecf928ecdf97169"
+
+http_archive(
+    name = "rules_jvm_external",
+    strip_prefix = "rules_jvm_external-%s" % RULES_JVM_EXTERNAL_TAG,
+    sha256 = RULES_JVM_EXTERNAL_SHA,
+    url = "https://github.com/bazelbuild/rules_jvm_external/archive/%s.zip" % RULES_JVM_EXTERNAL_TAG,
+)
+
+load("@rules_jvm_external//:defs.bzl", "maven_install")
+
+load("//tools:jvm_deps.bzl", "jvm_deps")
+
+jvm_deps()
+
+#load("@jvm_deps//:defs.bzl", "pinned_maven_install")
+#pinned_maven_install()
