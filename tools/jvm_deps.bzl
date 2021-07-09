@@ -26,7 +26,6 @@ def jvm_deps():
             "org.scala-lang:scala-reflect:" + SCALA_VERSION_MINOR,
         ],
         repositories = [
-            # Private repositories are supported through HTTP Basic auth
             "https://repo.maven.apache.org/maven2/",
             "https://jcenter.bintray.com/",
         ],
