@@ -56,5 +56,5 @@ load("//tools:jvm_deps.bzl", "jvm_deps")
 
 jvm_deps()
 
-#load("@jvm_deps//:defs.bzl", "pinned_maven_install")
-#pinned_maven_install()
+load("@jvm_deps//:defs.bzl", "pinned_maven_install")
+pinned_maven_install()

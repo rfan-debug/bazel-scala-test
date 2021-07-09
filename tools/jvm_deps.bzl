@@ -29,6 +29,7 @@ def jvm_deps():
             "https://repo.maven.apache.org/maven2/",
             "https://jcenter.bintray.com/",
         ],
+        generate_compat_repositories = True,
         fetch_sources = True,  # download the source JAR alongside the main artifact JAR
         maven_install_json = "@hello//:jvm_deps_install.json",
         strict_visibility = True,
