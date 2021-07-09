@@ -1,0 +1,12 @@
+load("@io_bazel_rules_scala//scala:scala.bzl", "scala_library", "scala_binary", "scala_test")
+
+
+scala_binary(
+    name = "circe_sample",
+    srcs = ["CirceSample.scala"],
+    main_class = "CirceSample",
+    deps = [
+        "@jvm_deps//:io_circe_circe_generic_2_12",
+        "@jvm_deps//:io_circe_circe_core_2_12",
+    ],
+)
