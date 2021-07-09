@@ -30,3 +30,7 @@ src/main/scala/CirceSample/CirceSample.scala:10: error: could not find implicit 
 ```
 
 
+The code https://github.com/rfan-debug/bazel-scala-test/tree/master/src/main/scala/CirceSample
+
+is originally from Circe's example: https://circe.github.io/circe/codecs/auto-derivation.html 
+
